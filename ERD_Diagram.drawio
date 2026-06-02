@@ -1,0 +1,78 @@
+<mxfile host="Electron" modified="2026-06-02T18:00:00.000Z" agent="Mozilla/5.0" version="16.1.0" etag="SRMS-ERD">
+  <diagram name="SRMS ERD" id="SRMS-ERD">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Customer Entity -->
+        <mxCell id="customer" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="customer-attrs" value="customerNumber (PK)&#10;firstName&#10;lastName&#10;telephone&#10;address" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=12;align=left;spacingLeft=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Product Entity -->
+        <mxCell id="product" value="Product" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="200" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="product-attrs" value="productCode (PK)&#10;productName&#10;quantitySold&#10;unitPrice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=12;align=left;spacingLeft=10" vertex="1" parent="1">
+          <mxGeometry x="380" y="240" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Sale Entity -->
+        <mxCell id="sale" value="Sale" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="500" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sale-attrs" value="invoiceNumber (PK)&#10;salesDate&#10;paymentMethod&#10;totalAmountPaid&#10;customerNumber (FK)&#10;productCode (FK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=12;align=left;spacingLeft=10" vertex="1" parent="1">
+          <mxGeometry x="200" y="540" width="180" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Relationship: Customer 1 ---* Sale -->
+        <mxCell id="rel-customer-sale" value="has" style="endArrow=open;endSize=12;dashed=0;html=1;fontSize=12;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="customer-attrs" target="sale">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="420" />
+              <mxPoint x="290" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Relationship: Product 1 ---* Sale -->
+        <mxCell id="rel-product-sale" value="has" style="endArrow=open;endSize=12;dashed=0;html=1;fontSize=12;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="product-attrs" target="sale">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="420" />
+              <mxPoint x="290" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Cardinality Labels -->
+        <mxCell id="card1" value="1" style="text;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="110" y="405" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="card2" value="*" style="text;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="270" y="405" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="card3" value="1" style="text;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="450" y="405" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="card4" value="*" style="text;html=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="310" y="405" width="30" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="title" value="Entity Relationship Diagram - Sales Record Management System (SRMS)" style="text;html=1;fontSize=18;fontStyle=1;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="550" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="Relationships:&#10;Customer (1) --- (M) Sale : One customer can make many sales&#10;Product (1) --- (M) Sale : One product can be sold in many sales" style="text;html=1;fontSize=12;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="500" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
